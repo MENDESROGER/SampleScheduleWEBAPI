@@ -1,1 +1,1 @@
-# SampleScheduleWEBAPI
+# SampleScheduleWEBAPI + PrimeFaces
