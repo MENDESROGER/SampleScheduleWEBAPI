@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:p="http://primefaces.org/ui"
+        xml:lang="en"
+        xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+        <title>Lista de Agendamentos</title>
+</h:head>
+<f:view>
+    <p:dialog modal="true" widgetVar="statusDialog" header="Status" draggable="false" closable="false"
+              resizable="false">
+        <p:graphicImage name="/images/ajaxloadingbar.gif"/>
+    </p:dialog>    
+    <h:body>
+        <h:form id="formAgendamento" prependId="false">
+            <h:commandLink action="#{buscarAvailabilityApi.availabilityApi}" value="Recarregar a listagem!" >
+                <p:graphicImage name="/images/refresh.png" alt="Recarregar listagem!" width="24"/>
+            </h:commandLink>
+            <p:growl id="mensagens" showDetail="true" autoUpdate="true" closable="true">
+                <p:autoUpdate/>
+            </p:growl>
+            <p:dataTable id="tabelaAvailability" var="item" value="#{buscarAvailabilityApi.candidateAll}" prependId="false"                        
+                          selectionMode="single"                                                 
+                                                 >                                
+                <p:column headerText="Sala" style="width: 6%;" sortBy="#{item.id}">         
+                    <h:outputText id="outputId"
+                                  value="#{item.id}"/>
+                </p:column>
+                <p:column headerText="Nome" style="width: 25%;" sortBy="#{item.name}"                          
+                          filterBy="#{item.name}">
+                    <h:outputText id="outputName"
+                                  value="#{item.name}"/>
+                </p:column>
+                <p:column headerText="Endereço" style="width: 10%;" sortBy="#{item.address}">
+                    <h:outputText value="#{item.address}"/>
+                </p:column>
+                <p:column headerText="Telefone" style="width: 10%;" sortBy="#{item.dateCreateRegister}">                          
+                    <h:outputText value="#{item.dateCreateRegister}"/>
+                </p:column>                                
+            </p:dataTable>
+       </h:form>
+    </h:body>
+</f:view>
+</html>
