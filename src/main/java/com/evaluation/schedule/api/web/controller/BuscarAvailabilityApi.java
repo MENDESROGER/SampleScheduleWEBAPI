@@ -66,7 +66,6 @@ public class BuscarAvailabilityApi {
     public BuscarAvailabilityApi() throws Exception {
 		super();
 		
-	
 	}
 
              

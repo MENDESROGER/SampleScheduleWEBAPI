@@ -45,8 +45,9 @@
                 <p:column headerText="Sala endereço" style="width: 10%;">
                     <h:outputText value="#{item.availability.room.address}"/>
                 </p:column>                
-                <p:column headerText="Telefone" pattern="dd/MM/yyyy HH:mm" style="width: 10%;" sortBy="#{item.dateCreateRegister}">                          
-                    <h:outputText value="#{item.availability.availableTimeStart}"/>
+                <p:column headerText="Data inscrição" pattern="dd/MM/yyyy HH:mm" style="width: 10%;" sortBy="#{item.dateCreateRegister}">                          
+                    <h:outputText value="#{item.availability.availableTimeStart}">                                       
+                    </h:outputText>
                 </p:column>                                
             </p:dataTable>
        </h:form>
