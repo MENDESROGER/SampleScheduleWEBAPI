@@ -8,9 +8,10 @@ http://localhost:8080/listAll.jr
 
 # Documentação Swagger
 Url: http://localhost:8080/swagger-ui.html
-apenas para teste
-API REST
-API RESTFUL não implementada
+
+API REST - Spring
+
+API REST - JAX-RS não implementada
 
 SampleScheduleWEBAPI
 CRUD (Create, Read, Update, Delete) de Agendamento de Exames de Certificação
